@@ -4,7 +4,6 @@ The purpose of this repository is to practice and improve web development skills
 
 
 ### Beginner Level Exercises
-
 1. Create a Basic HTML Page
 2. Add Paragraphs
 3. Insert an Image
