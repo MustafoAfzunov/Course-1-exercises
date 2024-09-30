@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Accordion</title>
+    <style>
+        .accordion {
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        .accordion h3 {
+            background-color: #f2f2f2;
+            padding: 10px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .accordion h3.active + .accordion-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion">
+        <h3 class="accordion-header">Section 1</h3>
+        <div class="accordion-content">Content for section 1.</div>
+
+        <h3 class="accordion-header">Section 2</h3>
+        <div class="accordion-content">Content for section 2.</div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

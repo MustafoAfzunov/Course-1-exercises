@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Popup Example</title>
+    <style>
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modal Popup</h1>
+    <button id="openModal">Open Modal</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Modal Content</h2>
+            <p>This is a modal popup example.</p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const modal = document.getElementById("modal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+
+        // Open modal
+        openModal.addEventListener("click", function() {
+            modal.style.display = "flex";
+        });
+
+        // Close modal
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // Close modal by clicking outside the content
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
